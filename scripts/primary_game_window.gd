@@ -12,3 +12,5 @@ func _process(_delta: float) -> void:
 	pass
 
 #updated the delta comment
+
+#TODO: Remove default windows bracket
