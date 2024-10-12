@@ -1,7 +1,14 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://b3qna3b85eetg"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://b3qna3b85eetg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6mlu"]
 bg_color = Color(0.894118, 0.870588, 0.878431, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yikaa"]
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l7nnh"]
+bg_color = Color(0.784314, 0.784314, 0.784314, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ld58a"]
 bg_color = Color(0.843137, 0.843137, 0.843137, 1)
@@ -29,6 +36,11 @@ border_color = Color(0.196078, 0.196078, 0.196078, 1)
 [resource]
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/styles/normal = SubResource("StyleBoxFlat_q6mlu")
+ItemList/colors/font_color = Color(0, 0, 0, 1)
+ItemList/colors/guide_color = Color(0, 0, 0, 1)
+ItemList/constants/line_separation = 2
+ItemList/styles/panel = SubResource("StyleBoxFlat_yikaa")
+ItemList/styles/selected = SubResource("StyleBoxFlat_l7nnh")
 MenuBar/colors/font_color = Color(0, 0, 0, 1)
 MenuBar/colors/font_hover_color = Color(0, 0, 1, 1)
 MenuBar/styles/hover = SubResource("StyleBoxFlat_ld58a")
