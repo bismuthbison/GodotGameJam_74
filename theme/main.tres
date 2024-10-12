@@ -1,7 +1,41 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://b3qna3b85eetg"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://b3qna3b85eetg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6mlu"]
+bg_color = Color(0.894118, 0.870588, 0.878431, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ld58a"]
+bg_color = Color(0.843137, 0.843137, 0.843137, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ls74y"]
+bg_color = Color(0.894118, 0.870588, 0.878431, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lws8a"]
+bg_color = Color(0.843137, 0.843137, 0.843137, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gu5s"]
 bg_color = Color(0.894118, 0.870588, 0.878431, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7bu7b"]
+bg_color = Color(0.894118, 0.870588, 0.878431, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6n2a"]
+bg_color = Color(0.894118, 0.870588, 0.878431, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.196078, 0.196078, 0.196078, 1)
+
 [resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/styles/normal = SubResource("StyleBoxFlat_q6mlu")
+MenuBar/colors/font_color = Color(0, 0, 0, 1)
+MenuBar/colors/font_hover_color = Color(0, 0, 1, 1)
+MenuBar/styles/hover = SubResource("StyleBoxFlat_ld58a")
+MenuBar/styles/normal = SubResource("StyleBoxFlat_ls74y")
+MenuBar/styles/pressed = SubResource("StyleBoxFlat_lws8a")
 Panel/styles/panel = SubResource("StyleBoxFlat_2gu5s")
+PopupMenu/colors/font_color = Color(0, 0, 0, 1)
+PopupMenu/colors/font_hover_color = Color(0, 0, 0.196078, 1)
+PopupMenu/styles/hover = SubResource("StyleBoxFlat_7bu7b")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_e6n2a")
