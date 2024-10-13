@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://bvn08v2htxsy4"]
+[gd_scene load_steps=13 format=4 uid="uid://bvn08v2htxsy4"]
 
 [ext_resource type="Script" path="res://scripts/game_view.gd" id="1_8466r"]
 [ext_resource type="TileSet" uid="uid://cybu3asf3j0u1" path="res://assets/Urband Tile Sets.tres" id="1_eun2r"]
@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://lwg3j5a81v5w" path="res://cRes/items/hammer.tres" id="8_m8a44"]
 [ext_resource type="PackedScene" uid="uid://c3hxdenh425ix" path="res://scenes/pushable_block.tscn" id="8_y1b5c"]
 [ext_resource type="Resource" uid="uid://bi6nl7dqd5nr" path="res://cRes/items/spanner.tres" id="9_tg4hf"]
+[ext_resource type="PackedScene" uid="uid://cfcgmdwjppacj" path="res://scenes/problem.tscn" id="11_pvymq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_speml"]
 size = Vector2(14, 14)
@@ -65,3 +66,5 @@ contents = ExtResource("9_tg4hf")
 
 [node name="PushableBlock" parent="." instance=ExtResource("8_y1b5c")]
 position = Vector2(-40, -8)
+
+[node name="Problem" parent="." instance=ExtResource("11_pvymq")]
