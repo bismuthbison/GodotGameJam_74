@@ -1,14 +1,12 @@
-extends Node2D
+extends StaticBody2D
 
-signal item_pickup(item_name : String)
-signal ping_the_top
+enum {CHEST_OPEN, CHEST_CLOSE}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	#ping_the_top.emit() #TODO: Get rid of this ping, this was a test
 	pass

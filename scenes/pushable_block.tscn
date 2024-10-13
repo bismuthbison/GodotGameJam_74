@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3hxdenh425ix"]
+
+[ext_resource type="Script" path="res://scenes/pushable_block.gd" id="1_2phsa"]
+[ext_resource type="Texture2D" uid="uid://bn5enun05528q" path="res://assets/placables/crate.bmp" id="1_6exy2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j4quy"]
+size = Vector2(14, 14)
+
+[node name="PushableBlock" type="StaticBody2D"]
+script = ExtResource("1_2phsa")
+metadata/type = "pushable"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6exy2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_j4quy")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, -16)

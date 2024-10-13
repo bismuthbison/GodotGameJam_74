@@ -6,25 +6,23 @@
 [ext_resource type="Texture2D" uid="uid://dnd0i4cxdi082" path="res://assets/placables/tile_0121.png" id="2_yhcby"]
 [ext_resource type="Script" path="res://scripts/npc.gd" id="4_6qcnv"]
 [ext_resource type="Texture2D" uid="uid://0lq1oj0y33to" path="res://assets/placables/tile_0124.png" id="4_bgdir"]
-[ext_resource type="Texture2D" uid="uid://cpl47efwxagaf" path="res://assets/placables/tile_0089.png" id="7_mr2d3"]
+[ext_resource type="PackedScene" uid="uid://cbu6i3urdyx2a" path="res://scenes/chest.tscn" id="7_6xfkx"]
+[ext_resource type="PackedScene" uid="uid://c3hxdenh425ix" path="res://scenes/pushable_block.tscn" id="8_y1b5c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_speml"]
-size = Vector2(14, 14)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4fukm"]
 size = Vector2(14, 14)
 
 [node name="GameView" type="Node2D"]
 script = ExtResource("1_8466r")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="Level01" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD/////AQAGAAUAAAAAAP//AQAGAAUAAAABAP//AQAGAAUAAAACAP//AQAGAAUAAAACAAAAAQAGAAUAAAADAAAAAQAGAAUAAAADAAEAAQAGAAUAAAABAAAAAQAGAAUAAAAAAAAAAQAGAAUAAAD//wAAAQAGAAUAAAD//wEAAQAGAAUAAAD+/wEAAQAGAAUAAAAAAAEAAQAGAAUAAAABAAIAAQAGAAUAAAACAAIAAQAGAAUAAAACAAEAAQAGAAUAAAABAAEAAQAGAAUAAAAEAAEAAQAGAAUAAAAEAAIAAQAGAAUAAAADAAIAAQAGAAUAAAADAAMAAQAGAAUAAAACAAMAAQAGAAUAAAABAAMAAQAGAAUAAAAAAAMAAQAGAAUAAAD//wMAAQAGAAUAAAD+/wMAAQAGAAUAAAD//wIAAQAGAAUAAAAAAAIAAQAGAAUAAAD+/wIAAQAGAAUAAAD+/wAAAQAGAAUAAAD+////AQAGAAUAAAD+//7/AQAGAAUAAAD///7/AQAGAAUAAAAAAP7/AQAGAAUAAAABAP7/AQAGAAUAAAACAP7/AQAGAAUAAAADAP7/AQAGAAUAAAAEAP7/AQAGAAUAAAAEAP//AQAGAAUAAAAEAAAAAQAGAAUAAAAEAAMAAQAGAAUAAAAEAAQAAQAGAAUAAAADAP//AQAGAAUAAAD9//7/AQAGAAUAAAD9////AQAGAAUAAAD9/wAAAQAGAAUAAAD9/wEAAQAGAAUAAAD9/wIAAQAGAAUAAAD9/wMAAQAGAAUAAAADAAQAAQAGAAUAAAACAAQAAQAGAAUAAAABAAQAAQAGAAUAAAAAAAQAAQAGAAUAAAD//wQAAQAGAAUAAAD+/wQAAQAGAAUAAAD9/wQAAQAGAAUAAAD8/wQAAQAGAAUAAAD8/wMAAQAGAAUAAAD8/wIAAQAGAAUAAAD8/wEAAQAGAAUAAAD8/wAAAQAGAAUAAAD8////AQAGAAUAAAD8//7/AQAGAAUAAAD8//3/AQAGAAUAAAD9//3/AQAGAAUAAAD+//3/AQAGAAUAAAD///3/AQAGAAUAAAAAAP3/AQAGAAUAAAABAP3/AQAGAAUAAAACAP3/AQAGAAUAAAADAP3/AQAGAAUAAAAEAP3/AQAGAAUAAAAFAP3/AQAGAAUAAAAFAP7/AQAGAAUAAAAFAP//AQAGAAUAAAAFAAAAAQAGAAUAAAAFAAEAAQAGAAUAAAAFAAIAAQAGAAUAAAAFAAMAAQAGAAUAAAAFAAQAAQAGAAUAAAAFAAUAAQAGAAUAAAAEAAUAAQAGAAUAAAADAAUAAQAGAAUAAAACAAUAAQAGAAUAAAABAAUAAQAGAAUAAAAAAAUAAQAGAAUAAAD//wUAAQAGAAUAAAD+/wUAAQAGAAUAAAD9/wUAAQAGAAUAAAD8/wUAAQAGAAUAAAD7/wUAAQAGAAUAAAD7/wQAAQAGAAUAAAD7/wMAAQAGAAUAAAD7/wIAAQAGAAUAAAD7/wEAAQAGAAUAAAD7/wAAAQAGAAUAAAD7////AQAGAAUAAAD7//7/AQAGAAUAAAD7//3/AQAGAAUAAAD7//z/AQAGAAUAAAD8//z/AQAGAAUAAAD9//z/AQAGAAUAAAD+//z/AQAGAAUAAAD///z/AQAGAAUAAAAAAPz/AQAGAAUAAAABAPz/AQAGAAUAAAACAPz/AQAGAAUAAAADAPz/AQAGAAUAAAAEAPz/AQAGAAUAAAAFAPz/AQAGAAUAAAAGAPz/AQAbAAAAAAAGAP3/AQAbAAAAAAAGAP7/AQAbAAAAAAAGAP//AQAbAAAAAAAGAAAAAQAbAAAAAAAGAAEAAQAbAAAAAAAGAAIAAQAbAAAAAAAGAAMAAQAbAAAAAAAGAAQAAQAbAAAAAAAGAAUAAQAbAAAAAAAGAAYAAQAdAAEAAAAFAAYAAQAaAAAAAAAEAAYAAQAaAAAAAAADAAYAAQAaAAAAAAACAAYAAQAaAAAAAAABAAYAAQAaAAAAAAAAAAYAAQAaAAAAAAD//wYAAQAaAAAAAAD+/wYAAQAaAAAAAAD9/wYAAQAaAAAAAAD8/wYAAQAaAAAAAAD7/wYAAQAaAAAAAAD6/wYAAQAcAAEAAAD6/wUAAQAbAAEAAAD6/wQAAQAbAAEAAAD6/wMAAQAbAAEAAAD6/wIAAQAbAAEAAAD6/wEAAQAbAAEAAAD6/wAAAQAbAAEAAAD6////AQAbAAEAAAD6//7/AQAbAAEAAAD6//3/AQAbAAEAAAD6//z/AQAbAAEAAAD6//v/AQAcAAAAAAD7//v/AQAaAAEAAAD8//v/AQAaAAEAAAD9//v/AQAaAAEAAAD+//v/AQAaAAEAAAD///v/AQAaAAEAAAAAAPv/AQAaAAEAAAABAPv/AQAaAAEAAAACAPv/AQAaAAEAAAADAPv/AQAaAAEAAAAEAPv/AQAaAAEAAAAFAPv/AQAaAAEAAAAGAPv/AQAdAAAAAAA=")
 tile_set = ExtResource("1_eun2r")
 
 [node name="Player" type="Node2D" parent="." node_paths=PackedStringArray("tile_map", "ray_cast")]
 position = Vector2(8, 8)
 script = ExtResource("2_w6t72")
-tile_map = NodePath("../TileMapLayer")
+tile_map = NodePath("../Level01")
 ray_cast = NodePath("RayCast2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
@@ -40,24 +38,23 @@ target_position = Vector2(0, 16)
 collision_mask = 14
 collide_with_areas = true
 
-[node name="NPC" type="CharacterBody2D" parent="."]
+[node name="Enemy" type="CharacterBody2D" parent="."]
 position = Vector2(40, 8)
 collision_layer = 14
 collision_mask = 0
 script = ExtResource("4_6qcnv")
 metadata/creature = "rat"
+metadata/type = "enemy"
 
-[node name="Sprite2D" type="Sprite2D" parent="NPC"]
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
 texture = ExtResource("4_bgdir")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
 shape = SubResource("RectangleShape2D_speml")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Chest" parent="." instance=ExtResource("7_6xfkx")]
 position = Vector2(8, -56)
+metadata/type = "chest"
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-texture = ExtResource("7_mr2d3")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("RectangleShape2D_4fukm")
+[node name="PushableBlock" parent="." instance=ExtResource("8_y1b5c")]
+position = Vector2(-40, -8)

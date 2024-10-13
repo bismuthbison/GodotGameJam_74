@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4ap675hnmqi3"
-path="res://.godot/imported/genericItem_color_162.png-21333fd9ec5da5c2a6398cd3fd9e694c.ctex"
+uid="uid://diw8010y45hxv"
+path="res://.godot/imported/hacksaw.png-f3d0485765e3ff2e0ab0247e18ac2208.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/items/genericItem_color_162.png"
-dest_files=["res://.godot/imported/genericItem_color_162.png-21333fd9ec5da5c2a6398cd3fd9e694c.ctex"]
+source_file="res://assets/items/hacksaw.png"
+dest_files=["res://.godot/imported/hacksaw.png-f3d0485765e3ff2e0ab0247e18ac2208.ctex"]
 
 [params]
 
