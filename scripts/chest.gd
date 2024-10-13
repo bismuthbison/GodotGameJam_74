@@ -18,6 +18,7 @@ func openMe() -> GameItem:
 		state = CHEST_OPEN
 		#send the contents
 		prints("Here is a ", contents.name)
+		SignalBus.add_item_to_inventory.emit(contents)
 		return contents
 	#endif
 	#return nothing

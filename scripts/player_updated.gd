@@ -5,6 +5,8 @@ extends Node2D
 
 const STEP_PIXEL = 16
 
+signal player_got_item(item:  GameItem)
+
 
 func _process(_delta: float) -> void:
 	handleInput()

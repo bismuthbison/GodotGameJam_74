@@ -2,8 +2,7 @@ extends Node2D
 
 @export var player : Node2D
 
-signal item_pickup(item_name : String)
-signal ping_the_top
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

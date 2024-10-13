@@ -14,7 +14,7 @@ var starting_level = preload("res://scenes/game_view.tscn")
 func _ready() -> void:
 	var levelInstance = starting_level.instantiate()
 	%TheGameView.add_child(levelInstance)
-	levelInstance.ping_the_top.connect(_got_pinged)
+	SignalBus.add_item_to_inventory.connect(_add_item_to_inventory)
 	pass
 #end func
 
@@ -34,3 +34,7 @@ func _got_pinged() -> void:
 func _on_inventory_list_item_activated(index: int) -> void:
 	
 	pass # Replace with function body.
+
+func _add_item_to_inventory(item: GameItem):
+	inventory.add_item(item.name, item.image)
+	pass

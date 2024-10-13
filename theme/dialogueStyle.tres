@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://desqj7bgb2wcq"]
+
+[ext_resource type="FontFile" uid="uid://cowor0vxea0j8" path="res://theme/fonts/monogram-extended.ttf" id="1_c7dua"]
+[ext_resource type="StyleBox" uid="uid://c6ebpqyrttfav" path="res://theme/dialogueStyleBoxFlat.tres" id="2_16k5d"]
+
+[resource]
+Label/font_sizes/font_size = 30
+Label/fonts/font = ExtResource("1_c7dua")
+Label/styles/normal = ExtResource("2_16k5d")
