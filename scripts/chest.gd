@@ -2,11 +2,23 @@ extends StaticBody2D
 
 enum {CHEST_OPEN, CHEST_CLOSE}
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+@export var contents : GameItem
+@export var chestOpenSprite : Sprite2D
+@export var chestClosedSprite : Sprite2D
 
+var state = CHEST_CLOSE
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func openMe() -> GameItem:
+	#if is closed
+	if state == CHEST_CLOSE:
+		#open the chest visually
+		chestClosedSprite.visible = false
+		chestOpenSprite.visible = true
+		#update the stated
+		state = CHEST_OPEN
+		#send the contents
+		prints("Here is a ", contents.name)
+		return contents
+	#endif
+	#return nothing
+	return null

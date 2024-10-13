@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="GameItem" load_steps=3 format=3 uid="uid://bi6nl7dqd5nr"]
+
+[ext_resource type="Texture2D" uid="uid://cp4t44ny3farh" path="res://assets/items/singlespanner.png" id="1_1vhp1"]
+[ext_resource type="Script" path="res://scripts/game_items.gd" id="2_tcfkx"]
+
+[resource]
+script = ExtResource("2_tcfkx")
+name = "Spanner"
+image = ExtResource("1_1vhp1")

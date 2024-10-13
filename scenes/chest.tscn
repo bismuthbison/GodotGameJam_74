@@ -7,9 +7,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4fukm"]
 size = Vector2(14, 14)
 
-[node name="Chest" type="StaticBody2D"]
+[node name="Chest" type="StaticBody2D" node_paths=PackedStringArray("chestOpenSprite", "chestClosedSprite")]
 collision_layer = 4
 script = ExtResource("1_hqidb")
+chestOpenSprite = NodePath("chest_open")
+chestClosedSprite = NodePath("chest_closed")
+metadata/type = "chest"
 
 [node name="chest_open" type="Sprite2D" parent="."]
 visible = false

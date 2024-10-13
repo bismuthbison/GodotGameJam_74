@@ -29,11 +29,12 @@ func move(direction: Vector2i):
 		current_tile.x + direction.x,
 		current_tile.y + direction.y,
 	)
-	prints(current_tile, target_tile)
+	#prints(current_tile, target_tile) - Keep for debugging
 	#get custom data layer from the target tile
 	var tile_data : TileData = tile_map.get_cell_tile_data(target_tile)
 	
 	if tile_data.get_custom_data("walkable") == false:
+		#TODO: Add Noise
 		print("bonk")
 		return
 	#end if
@@ -41,10 +42,28 @@ func move(direction: Vector2i):
 	ray_cast.force_raycast_update()
 	
 	if ray_cast.is_colliding():
-		print(ray_cast.get_collider().get_meta("creature"))
-		return
+		var whatGotHit = ray_cast.get_collider()
+		var meta = whatGotHit.get_meta("type")
+		#check if the object has the meta data of pushable
+		if meta == "pushable": 
+			var result = whatGotHit.push(direction,tile_map)
+			#try to push object in same direction, 
+			if result == false:
+				return
+			#endif
+		if meta == "chest":
+			var item : GameItem = whatGotHit.openMe()
+			if item == null:
+				print("empty")
+				return
+			prints("I got a ", item.name)
+			return
+		else:
+			return
+		#endif
 	#end if
 	#move player
 	global_position = tile_map.map_to_local(target_tile)
 	pass
 #end func
+

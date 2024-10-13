@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var player : Node2D
+
 signal item_pickup(item_name : String)
 signal ping_the_top
 
@@ -12,3 +14,4 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	#ping_the_top.emit() #TODO: Get rid of this ping, this was a test
 	pass
+#hey

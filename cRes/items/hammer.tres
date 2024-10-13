@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="GameItem" load_steps=3 format=3 uid="uid://lwg3j5a81v5w"]
+
+[ext_resource type="Script" path="res://scripts/game_items.gd" id="1_05c3c"]
+[ext_resource type="Texture2D" uid="uid://cojddqmqeq21d" path="res://assets/items/hammer.png" id="1_7mxfa"]
+
+[resource]
+script = ExtResource("1_05c3c")
+name = "Hammer"
+image = ExtResource("1_7mxfa")
