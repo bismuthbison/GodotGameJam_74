@@ -19,6 +19,4 @@ func openMe() -> void:
 		#send the contents
 		SignalBus.add_item_to_inventory.emit(contents)
 	elif state == CHEST_OPEN:
-		SignalBus.update_talkbox.emit("The Chest is Empty")
-	#endif
-#endfunc
+		SignalBus.update_talkbox.emit("The chest is empty .. :-(")

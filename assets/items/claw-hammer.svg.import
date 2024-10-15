@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcg61818yo1ji"
-path="res://.godot/imported/genericItem_color_001.png-8c488f7102409f46047b0ea25da93c2f.ctex"
+uid="uid://vg2ac1uc8cpf"
+path="res://.godot/imported/claw-hammer.svg-38a889c53b7225ffa2480bfc9dbe3a70.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/items/genericItem_color_001.png"
-dest_files=["res://.godot/imported/genericItem_color_001.png-8c488f7102409f46047b0ea25da93c2f.ctex"]
+source_file="res://assets/items/claw-hammer.svg"
+dest_files=["res://.godot/imported/claw-hammer.svg-38a889c53b7225ffa2480bfc9dbe3a70.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

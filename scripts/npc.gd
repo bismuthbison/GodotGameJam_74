@@ -1,12 +1,13 @@
 extends Node2D
 
+@export var speach : Dialogue
+@export var look : Texture2D
+@export var who_am_i: String
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	if look != null:
+		$Sprite2D.texture = look
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
+func talk() -> bool:
+	SignalBus.update_talkbox.emit(speach.get_next_line_text(), who_am_i)
+	return false

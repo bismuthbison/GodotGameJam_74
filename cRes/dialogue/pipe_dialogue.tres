@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://00hwy6qwvcp1"]
+
+[ext_resource type="Script" path="res://scripts/dialogue.gd" id="1_s7xnf"]
+
+[resource]
+script = ExtResource("1_s7xnf")
+dialogue_text = Array[String](["It is a leaking pipe", "I need something to tighten it"])

@@ -14,8 +14,9 @@ func _display_item_desc(item: GameItem):
 		return
 	#end if
 	var desc : Dialogue = item.description
-	self.text = desc.dialogue_text[0]
+	self.text = desc.get_description()
 #end func
 
-func _display_message(message : String):
-	self.text = message
+func _display_message(message : String, speaker : String = "Slummy"):
+	self.text = str(speaker, ": \n")
+	self.text = str(self.text, message)

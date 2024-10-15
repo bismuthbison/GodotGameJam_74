@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://ognyx1ahrkwf"]
+
+[ext_resource type="Script" path="res://scripts/player_updated.gd" id="1_bnwg2"]
+[ext_resource type="Texture2D" uid="uid://dnd0i4cxdi082" path="res://assets/placables/tile_0121.png" id="2_yux52"]
+
+[node name="Player" type="Node2D" node_paths=PackedStringArray("tile_map", "ray_cast")]
+position = Vector2(8, 8)
+script = ExtResource("1_bnwg2")
+tile_map = NodePath("")
+ray_cast = NodePath("RayCast2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_yux52")
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+exclude_parent = false
+target_position = Vector2(0, 16)
+collision_mask = 30
+collide_with_areas = true
