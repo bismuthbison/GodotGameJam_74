@@ -8,7 +8,7 @@ enum {CHEST_OPEN, CHEST_CLOSE}
 
 var state = CHEST_CLOSE
 
-func openMe() -> GameItem:
+func openMe() -> void:
 	#if is closed
 	if state == CHEST_CLOSE:
 		#open the chest visually
@@ -17,9 +17,8 @@ func openMe() -> GameItem:
 		#update the stated
 		state = CHEST_OPEN
 		#send the contents
-		prints("Here is a ", contents.name)
 		SignalBus.add_item_to_inventory.emit(contents)
-		return contents
+	elif state == CHEST_OPEN:
+		SignalBus.update_talkbox.emit("The Chest is Empty")
 	#endif
-	#return nothing
-	return null
+#endfunc

@@ -3,10 +3,19 @@ extends Node2D
 @export var tile_map : TileMapLayer
 @export var ray_cast : RayCast2D
 
+var equiped_item : GameItem
+
 const STEP_PIXEL = 16
 
-signal player_got_item(item:  GameItem)
 
+func _ready() -> void:
+	SignalBus.item_is_selected.connect(_hold_item)
+#endfunc
+	
+func _hold_item(item: GameItem):
+	equiped_item = item
+	prints(equiped_item)
+#endfunc
 
 func _process(_delta: float) -> void:
 	handleInput()
@@ -54,13 +63,12 @@ func move(direction: Vector2i):
 				return
 			#endif
 		if meta == "chest":
-			var item : GameItem = whatGotHit.openMe()
-			if item == null:
-				print("empty")
-				return
-			prints("I got a ", item.name)
+			whatGotHit.openMe()
 			return
-		else:
+		#endif
+		if meta == "problem":
+			whatGotHit.attemptSolution(equiped_item)
+			
 			return
 		#endif
 	#end if
@@ -68,4 +76,3 @@ func move(direction: Vector2i):
 	global_position = tile_map.map_to_local(target_tile)
 	pass
 #end func
-
