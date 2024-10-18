@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crxqthehghhvi"
-path="res://.godot/imported/tile_0107.png-623de0bc73209c0ed36b5d497d457b4a.ctex"
+uid="uid://b6mqx30wbbijx"
+path="res://.godot/imported/roach.png-84eb5578469698ea27fae6e7db3f1177.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placables/tile_0107.png"
-dest_files=["res://.godot/imported/tile_0107.png-623de0bc73209c0ed36b5d497d457b4a.ctex"]
+source_file="res://assets/placables/roach.png"
+dest_files=["res://.godot/imported/roach.png-84eb5578469698ea27fae6e7db3f1177.ctex"]
 
 [params]
 

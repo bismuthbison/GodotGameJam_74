@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://ognyx1ahrkwf"]
+[gd_scene load_steps=4 format=3 uid="uid://ognyx1ahrkwf"]
 
 [ext_resource type="Script" path="res://scripts/player_updated.gd" id="1_bnwg2"]
+[ext_resource type="AudioStream" uid="uid://cba0udose2lrm" path="res://assets/noises/step.wav" id="2_vh80u"]
 [ext_resource type="Texture2D" uid="uid://dnd0i4cxdi082" path="res://assets/placables/tile_0121.png" id="2_yux52"]
 
 [node name="Player" type="Node2D" node_paths=PackedStringArray("ray_cast")]
 position = Vector2(8, 8)
 script = ExtResource("1_bnwg2")
 ray_cast = NodePath("RayCast2D")
+step_sound = ExtResource("2_vh80u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_yux52")

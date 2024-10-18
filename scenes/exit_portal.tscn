@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bufywrkgr8712"]
+[gd_scene load_steps=10 format=3 uid="uid://bufywrkgr8712"]
 
 [ext_resource type="Script" path="res://scripts/exit_portal.gd" id="1_cibkv"]
 [ext_resource type="Texture2D" uid="uid://cr37h8rq8wo5n" path="res://assets/placables/portal.png" id="1_qpf0d"]
+[ext_resource type="AudioStream" uid="uid://cipkt6rkh8mte" path="res://assets/noises/exitportalopens.mp3" id="2_7gcic"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0gyai"]
 atlas = ExtResource("1_qpf0d")
@@ -48,6 +49,7 @@ collision_layer = 32
 script = ExtResource("1_cibkv")
 anime = NodePath("AnimatedSprite2D")
 collish = NodePath("CollisionShape2D")
+open_sound = ExtResource("2_7gcic")
 metadata/type = "exit"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

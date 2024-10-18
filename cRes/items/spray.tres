@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GameItem" load_steps=4 format=3 uid="uid://st81drwif5et"]
+
+[ext_resource type="Texture2D" uid="uid://baiisq6fl7k3s" path="res://assets/items/spray.svg" id="1_8y63p"]
+[ext_resource type="Script" path="res://scripts/game_items.gd" id="1_epuuh"]
+[ext_resource type="Resource" uid="uid://c8a0qm7if8bxm" path="res://cRes/dialogue/spray_dialogue.tres" id="1_yc52s"]
+
+[resource]
+script = ExtResource("1_epuuh")
+name = "Bug Spray"
+image = ExtResource("1_8y63p")
+description = ExtResource("1_yc52s")

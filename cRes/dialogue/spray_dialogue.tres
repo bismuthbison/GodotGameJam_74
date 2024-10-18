@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://c8a0qm7if8bxm"]
+
+[ext_resource type="Script" path="res://scripts/dialogue.gd" id="1_dm5uy"]
+
+[resource]
+script = ExtResource("1_dm5uy")
+dialogue_text = Array[String](["This is a can of bug spray", "I kill the roach with the spray"])

@@ -2,6 +2,7 @@ extends Node2D
 
 @export var tile_map : TileMapLayer
 @export var ray_cast : RayCast2D
+@export var step_sound : AudioStream
 
 var equiped_item : GameItem
 
@@ -65,4 +66,4 @@ func move(direction: Vector2i):
 			return whatGotHit.exitLevel()
 			
 	global_position = tile_map.map_to_local(target_tile) #All else move
-	SignalBus.audio_trigger.emit("step_sound")
+	SignalBus.audio_trigger.emit(step_sound)

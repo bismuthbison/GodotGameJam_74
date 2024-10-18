@@ -1,16 +1,25 @@
-[gd_scene load_steps=12 format=4 uid="uid://bvn08v2htxsy4"]
+[gd_scene load_steps=21 format=4 uid="uid://bvn08v2htxsy4"]
 
 [ext_resource type="Script" path="res://scripts/game_view.gd" id="1_8466r"]
 [ext_resource type="TileSet" uid="uid://cybu3asf3j0u1" path="res://assets/Urband Tile Sets.tres" id="1_eun2r"]
 [ext_resource type="PackedScene" uid="uid://ognyx1ahrkwf" path="res://scenes/player.tscn" id="3_pqapg"]
 [ext_resource type="PackedScene" uid="uid://cbu6i3urdyx2a" path="res://scenes/chest.tscn" id="7_6xfkx"]
+[ext_resource type="Resource" uid="uid://st81drwif5et" path="res://cRes/items/spray.tres" id="7_c3ael"]
 [ext_resource type="Resource" uid="uid://lwg3j5a81v5w" path="res://cRes/items/hammer.tres" id="8_m8a44"]
 [ext_resource type="PackedScene" uid="uid://c3hxdenh425ix" path="res://scenes/pushable_block.tscn" id="8_y1b5c"]
 [ext_resource type="Resource" uid="uid://00hwy6qwvcp1" path="res://cRes/dialogue/pipe_dialogue.tres" id="9_btpb7"]
 [ext_resource type="Resource" uid="uid://bi6nl7dqd5nr" path="res://cRes/items/spanner.tres" id="9_tg4hf"]
+[ext_resource type="Texture2D" uid="uid://bk2lddqwercqw" path="res://assets/placables/pipe-Sheet.bmp" id="10_h874o"]
 [ext_resource type="PackedScene" uid="uid://bmsoswgpfxc3f" path="res://scenes/npc.tscn" id="10_or1d4"]
+[ext_resource type="AudioStream" uid="uid://ql6cdb35dagw" path="res://assets/noises/tighten.mp3" id="11_01ruo"]
 [ext_resource type="PackedScene" uid="uid://bufywrkgr8712" path="res://scenes/exit_portal.tscn" id="11_kptwk"]
 [ext_resource type="PackedScene" uid="uid://cfcgmdwjppacj" path="res://scenes/problem.tscn" id="11_pvymq"]
+[ext_resource type="Resource" uid="uid://ddwsd0sw4sggp" path="res://cRes/dialogue/rat_dialogue.tres" id="12_bvs0p"]
+[ext_resource type="Texture2D" uid="uid://b3yucvpqlefd8" path="res://assets/placables/rat-Sheet.png" id="13_ck045"]
+[ext_resource type="AudioStream" uid="uid://dthv84rs7ofop" path="res://assets/noises/rat_death.mp3" id="14_tqtrl"]
+[ext_resource type="Resource" uid="uid://btrjhg53u5b12" path="res://cRes/dialogue/roach_dialogue.tres" id="18_830rt"]
+[ext_resource type="Texture2D" uid="uid://b6mqx30wbbijx" path="res://assets/placables/roach.png" id="19_dq56s"]
+[ext_resource type="AudioStream" uid="uid://btcw8240ipywo" path="res://assets/noises/spray.mp3" id="20_kvvdi"]
 
 [node name="Level_01" type="Node2D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_8466r")
@@ -23,13 +32,17 @@ tile_set = ExtResource("1_eun2r")
 [node name="Player" parent="." node_paths=PackedStringArray("tile_map") instance=ExtResource("3_pqapg")]
 tile_map = NodePath("../Level01")
 
-[node name="Chest" parent="." instance=ExtResource("7_6xfkx")]
+[node name="ChestWithHammer" parent="." instance=ExtResource("7_6xfkx")]
 position = Vector2(8, -56)
 contents = ExtResource("8_m8a44")
 
-[node name="Chest2" parent="." instance=ExtResource("7_6xfkx")]
+[node name="ChestWithSpanner" parent="." instance=ExtResource("7_6xfkx")]
 position = Vector2(-24, -56)
 contents = ExtResource("9_tg4hf")
+
+[node name="ChestWithSpray" parent="." instance=ExtResource("7_6xfkx")]
+position = Vector2(40, -56)
+contents = ExtResource("7_c3ael")
 
 [node name="PushableBlock" parent="." instance=ExtResource("8_y1b5c")]
 position = Vector2(24, 72)
@@ -37,20 +50,26 @@ position = Vector2(24, 72)
 [node name="PushableBlock2" parent="." instance=ExtResource("8_y1b5c")]
 position = Vector2(-24, 72)
 
-[node name="Problem" parent="." instance=ExtResource("11_pvymq")]
+[node name="pipe" parent="." instance=ExtResource("11_pvymq")]
 position = Vector2(72, -40)
 solution = ExtResource("9_tg4hf")
 description = ExtResource("9_btpb7")
+image = ExtResource("10_h874o")
+audio = ExtResource("11_01ruo")
 
-[node name="Problem2" parent="." instance=ExtResource("11_pvymq")]
+[node name="pipe1" parent="." instance=ExtResource("11_pvymq")]
 position = Vector2(72, -24)
 solution = ExtResource("9_tg4hf")
 description = ExtResource("9_btpb7")
+image = ExtResource("10_h874o")
+audio = ExtResource("11_01ruo")
 
-[node name="Problem3" parent="." instance=ExtResource("11_pvymq")]
+[node name="pipe2" parent="." instance=ExtResource("11_pvymq")]
 position = Vector2(72, -8)
 solution = ExtResource("9_tg4hf")
 description = ExtResource("9_btpb7")
+image = ExtResource("10_h874o")
+audio = ExtResource("11_01ruo")
 
 [node name="NPC" parent="." instance=ExtResource("10_or1d4")]
 position = Vector2(-24, -8)
@@ -58,3 +77,17 @@ who_am_i = "Entity"
 
 [node name="ExitPortal" parent="." instance=ExtResource("11_kptwk")]
 position = Vector2(88, 88)
+
+[node name="Problem4" parent="." instance=ExtResource("11_pvymq")]
+position = Vector2(72, 8)
+solution = ExtResource("8_m8a44")
+description = ExtResource("12_bvs0p")
+image = ExtResource("13_ck045")
+audio = ExtResource("14_tqtrl")
+
+[node name="Roach" parent="." instance=ExtResource("11_pvymq")]
+position = Vector2(72, 24)
+solution = ExtResource("7_c3ael")
+description = ExtResource("18_830rt")
+image = ExtResource("19_dq56s")
+audio = ExtResource("20_kvvdi")

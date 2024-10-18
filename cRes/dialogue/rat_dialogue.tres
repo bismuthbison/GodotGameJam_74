@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://ddwsd0sw4sggp"]
+
+[ext_resource type="Script" path="res://scripts/dialogue.gd" id="1_7ykgr"]
+
+[resource]
+script = ExtResource("1_7ykgr")
+dialogue_text = Array[String](["I don't see the problem with rats", "They are kind of cute", "But they \"spread diseases\"", "Guess I should smash it."])

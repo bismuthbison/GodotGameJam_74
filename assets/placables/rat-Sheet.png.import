@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nehubvojngtt"
-path="res://.godot/imported/tile_0102.png-811a46a0f9df30043247325c6c418ed6.ctex"
+uid="uid://b3yucvpqlefd8"
+path="res://.godot/imported/rat-Sheet.png-8589367b94d55deb4a4f28913be7a55c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placables/tile_0102.png"
-dest_files=["res://.godot/imported/tile_0102.png-811a46a0f9df30043247325c6c418ed6.ctex"]
+source_file="res://assets/placables/rat-Sheet.png"
+dest_files=["res://.godot/imported/rat-Sheet.png-8589367b94d55deb4a4f28913be7a55c.ctex"]
 
 [params]
 

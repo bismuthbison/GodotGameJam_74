@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bp4belogjknwf"]
+[gd_scene load_steps=12 format=3 uid="uid://bp4belogjknwf"]
 
 [ext_resource type="Theme" uid="uid://b3qna3b85eetg" path="res://theme/main.tres" id="1_r64qc"]
 [ext_resource type="Script" path="res://scripts/primary_game_window.gd" id="2_ot7pi"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scripts/talk_box.gd" id="4_bntd7"]
 [ext_resource type="Script" path="res://scripts/audio_bus.gd" id="5_43mt4"]
 [ext_resource type="AudioStream" uid="uid://cba0udose2lrm" path="res://assets/noises/step.wav" id="5_vwpee"]
+[ext_resource type="AudioStream" uid="uid://cipkt6rkh8mte" path="res://assets/noises/exitportalopens.mp3" id="8_chwxv"]
 [ext_resource type="Script" path="res://scripts/pop_up_manager.gd" id="8_tir0j"]
 [ext_resource type="Script" path="res://scripts/quitpopup.gd" id="9_t73kg"]
 
@@ -139,8 +140,11 @@ script = ExtResource("4_bntd7")
 script = ExtResource("5_43mt4")
 volume_option = NodePath("../Panel/VBoxContainer/MenuBar/Options")
 
-[node name="step_sound" type="AudioStreamPlayer2D" parent="AudioBus"]
+[node name="sound_to_play" type="AudioStreamPlayer2D" parent="AudioBus"]
 stream = ExtResource("5_vwpee")
+
+[node name="exit_sound" type="AudioStreamPlayer2D" parent="AudioBus"]
+stream = ExtResource("8_chwxv")
 
 [node name="PopUpManager" type="Node" parent="." node_paths=PackedStringArray("quitPopUp")]
 script = ExtResource("8_tir0j")

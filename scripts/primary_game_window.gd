@@ -25,8 +25,11 @@ func _load_scene():
 	var LevelInstance = levels[current_level].instantiate()
 	%TheGameView.get_child(0).queue_free()
 	%TheGameView.add_child(LevelInstance)
+	_reset_problems()
+	clearInventory()
 func _reset_problems(): #reset the value
 	problemCount = 0
+	solvedProblems = 0
 	level_progress.value = 0
 func _tally_problems(): #tally all the problems
 	problemCount += 1
@@ -40,6 +43,8 @@ func _problem_solved():
 func _add_item_to_inventory(item: GameItem):
 	var lineNo = inventory.add_item(item.name, item.image)
 	inventoryItems[lineNo] = item
+func clearInventory():
+	inventory.clear()
 func _on_inventory_list_item_clicked(index: int, at_position: Vector2, mouse_button_index: int) -> void:
 	SignalBus.update_talkbox.emit(str("I am holding the ", inventoryItems[index].name))
 	SignalBus.item_is_selected.emit(inventoryItems[index])

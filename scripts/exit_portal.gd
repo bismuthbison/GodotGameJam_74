@@ -2,6 +2,7 @@ extends StaticBody2D
 
 @export var anime : AnimatedSprite2D
 @export var collish : CollisionShape2D
+@export var open_sound : AudioStream
 
 var active = false #should be set to false unless testing
 func _ready() -> void:

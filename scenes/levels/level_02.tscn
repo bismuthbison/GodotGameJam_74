@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://jjkhpfk524ml"]
+[gd_scene load_steps=15 format=4 uid="uid://jjkhpfk524ml"]
 
 [ext_resource type="TileSet" uid="uid://cybu3asf3j0u1" path="res://assets/Urband Tile Sets.tres" id="1_o6yts"]
 [ext_resource type="PackedScene" uid="uid://bmsoswgpfxc3f" path="res://scenes/npc.tscn" id="2_7l4k6"]
@@ -7,6 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://c3hxdenh425ix" path="res://scenes/pushable_block.tscn" id="5_pfbcq"]
 [ext_resource type="Resource" uid="uid://bs04qhptbxm4b" path="res://cRes/dialogue/level02_npc.tres" id="6_c8iks"]
 [ext_resource type="Texture2D" uid="uid://cc4nim0bbkayr" path="res://assets/placables/tile_0099.png" id="6_ynweo"]
+[ext_resource type="PackedScene" uid="uid://cfcgmdwjppacj" path="res://scenes/problem.tscn" id="8_6ryct"]
+[ext_resource type="PackedScene" uid="uid://cbu6i3urdyx2a" path="res://scenes/chest.tscn" id="9_6tqar"]
+[ext_resource type="Resource" uid="uid://st81drwif5et" path="res://cRes/items/spray.tres" id="9_p2uv5"]
+[ext_resource type="Resource" uid="uid://btrjhg53u5b12" path="res://cRes/dialogue/roach_dialogue.tres" id="10_dsx0v"]
+[ext_resource type="Texture2D" uid="uid://b6mqx30wbbijx" path="res://assets/placables/roach.png" id="11_ett3x"]
+[ext_resource type="AudioStream" uid="uid://btcw8240ipywo" path="res://assets/noises/spray.mp3" id="12_r3y8o"]
+[ext_resource type="PackedScene" uid="uid://bufywrkgr8712" path="res://scenes/exit_portal.tscn" id="14_3q6ik"]
 
 [node name="Level_02" type="Node2D"]
 
@@ -22,39 +29,70 @@ tile_map_data = PackedByteArray("AAAAAPr/AAAIAAEAAAD///r/AAALAAEAAAD8//b/AQALAA0
 tile_set = ExtResource("1_o6yts")
 metadata/_edit_lock_ = true
 
-[node name="Entity" parent="." instance=ExtResource("2_7l4k6")]
-position = Vector2(-24, -56)
-speach = ExtResource("3_qnoco")
-who_am_i = "Entity"
-
 [node name="Player" parent="." node_paths=PackedStringArray("tile_map") instance=ExtResource("4_kycy8")]
 position = Vector2(-24, 8)
 tile_map = NodePath("../TheWorld/BaseLayer")
 
 [node name="Crates" type="Node" parent="."]
 
-[node name="PushableBlock" parent="." instance=ExtResource("5_pfbcq")]
+[node name="PushableBlock" parent="Crates" instance=ExtResource("5_pfbcq")]
 position = Vector2(360, -328)
 
-[node name="PushableBlock2" parent="." instance=ExtResource("5_pfbcq")]
+[node name="PushableBlock2" parent="Crates" instance=ExtResource("5_pfbcq")]
 position = Vector2(360, -296)
 
-[node name="PushableBlock3" parent="." instance=ExtResource("5_pfbcq")]
+[node name="PushableBlock3" parent="Crates" instance=ExtResource("5_pfbcq")]
 position = Vector2(296, -328)
 
-[node name="PushableBlock4" parent="." instance=ExtResource("5_pfbcq")]
+[node name="PushableBlock4" parent="Crates" instance=ExtResource("5_pfbcq")]
 position = Vector2(296, -344)
 
-[node name="PushableBlock5" parent="." instance=ExtResource("5_pfbcq")]
+[node name="PushableBlock5" parent="Crates" instance=ExtResource("5_pfbcq")]
 position = Vector2(312, -296)
 
-[node name="PushableBlock6" parent="." instance=ExtResource("5_pfbcq")]
+[node name="PushableBlock6" parent="Crates" instance=ExtResource("5_pfbcq")]
 position = Vector2(296, -312)
 
-[node name="PushableBlock7" parent="." instance=ExtResource("5_pfbcq")]
+[node name="PushableBlock7" parent="Crates" instance=ExtResource("5_pfbcq")]
 position = Vector2(200, -280)
 
-[node name="NPC" parent="." instance=ExtResource("2_7l4k6")]
+[node name="PushableBlock8" parent="Crates" instance=ExtResource("5_pfbcq")]
+position = Vector2(360, -456)
+
+[node name="PushableBlock9" parent="Crates" instance=ExtResource("5_pfbcq")]
+position = Vector2(360, -472)
+
+[node name="PushableBlock10" parent="Crates" instance=ExtResource("5_pfbcq")]
+position = Vector2(360, -488)
+
+[node name="Problems" type="Node" parent="."]
+
+[node name="Roach" parent="Problems" instance=ExtResource("8_6ryct")]
+position = Vector2(-40, -136)
+solution = ExtResource("9_p2uv5")
+description = ExtResource("10_dsx0v")
+image = ExtResource("11_ett3x")
+audio = ExtResource("12_r3y8o")
+
+[node name="Chests" type="Node" parent="."]
+
+[node name="ChestWithSpray" parent="Chests" instance=ExtResource("9_6tqar")]
+position = Vector2(376, -456)
+contents = ExtResource("9_p2uv5")
+
+[node name="NPCs" type="Node" parent="."]
+
+[node name="Entity" parent="NPCs" instance=ExtResource("2_7l4k6")]
+position = Vector2(-24, -56)
+speach = ExtResource("3_qnoco")
+who_am_i = "Entity"
+
+[node name="Tenant" parent="NPCs" instance=ExtResource("2_7l4k6")]
 position = Vector2(8, -104)
 speach = ExtResource("6_c8iks")
 look = ExtResource("6_ynweo")
+who_am_i = "Tenant"
+
+[node name="ExitPortal" parent="." instance=ExtResource("14_3q6ik")]
+visible = false
+position = Vector2(8, -72)

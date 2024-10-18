@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_rqxml")
-dialogue_text = Array[String](["This is a hammer", "I used to hammer to fix the door"])
+dialogue_text = Array[String](["This is a hammer", "I smashed it with a hammer"])
