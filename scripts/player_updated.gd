@@ -61,5 +61,8 @@ func move(direction: Vector2i):
 			return #don't move
 		if meta == "npc":
 			return whatGotHit.talk()
+		if meta == "exit": 
+			return whatGotHit.exitLevel()
 			
 	global_position = tile_map.map_to_local(target_tile) #All else move
+	SignalBus.audio_trigger.emit("step_sound")

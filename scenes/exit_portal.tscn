@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://bufywrkgr8712"]
+
+[ext_resource type="Script" path="res://scripts/exit_portal.gd" id="1_cibkv"]
+[ext_resource type="Texture2D" uid="uid://cr37h8rq8wo5n" path="res://assets/placables/portal.png" id="1_qpf0d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gyai"]
+atlas = ExtResource("1_qpf0d")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wyeh5"]
+atlas = ExtResource("1_qpf0d")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyesg"]
+atlas = ExtResource("1_qpf0d")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycwrg"]
+atlas = ExtResource("1_qpf0d")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kvd68"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gyai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wyeh5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyesg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycwrg")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6y1s2"]
+size = Vector2(16, 16)
+
+[node name="ExitPortal" type="StaticBody2D" node_paths=PackedStringArray("anime", "collish")]
+collision_layer = 32
+script = ExtResource("1_cibkv")
+anime = NodePath("AnimatedSprite2D")
+collish = NodePath("CollisionShape2D")
+metadata/type = "exit"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kvd68")
+animation = &"idle"
+frame_progress = 0.378445
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6y1s2")

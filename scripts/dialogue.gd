@@ -9,7 +9,8 @@ var _current_line : int = 0
 func get_description() -> String: #The first line will always be description
 	return dialogue_text[0]
 
-func get_next_line_text(progress : bool = true) -> String:
+func get_next_line_text( progress : bool = true # the dialogue will progress
+						) -> String:
 	if _current_line >= dialogue_text.size():
 		return dialogue_text.back()
 	var line = dialogue_text[_current_line]

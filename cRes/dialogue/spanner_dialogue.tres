@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_vrkhr")
-dialogue_text = Array[String](["This is a spanner", "I use the spanner to fix the pipe"])
+dialogue_text = Array[String](["This is a wrench!", "I use the wrench to fix the pipe"])

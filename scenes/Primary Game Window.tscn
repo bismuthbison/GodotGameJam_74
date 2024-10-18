@@ -1,11 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://bp4belogjknwf"]
+[gd_scene load_steps=11 format=3 uid="uid://bp4belogjknwf"]
 
 [ext_resource type="Theme" uid="uid://b3qna3b85eetg" path="res://theme/main.tres" id="1_r64qc"]
 [ext_resource type="Script" path="res://scripts/primary_game_window.gd" id="2_ot7pi"]
 [ext_resource type="Theme" uid="uid://desqj7bgb2wcq" path="res://theme/dialogueStyle.tres" id="3_0xijs"]
+[ext_resource type="Script" path="res://scripts/menu_bar.gd" id="3_m8ib3"]
 [ext_resource type="Script" path="res://scripts/talk_box.gd" id="4_bntd7"]
+[ext_resource type="Script" path="res://scripts/audio_bus.gd" id="5_43mt4"]
+[ext_resource type="AudioStream" uid="uid://cba0udose2lrm" path="res://assets/noises/step.wav" id="5_vwpee"]
+[ext_resource type="Script" path="res://scripts/pop_up_manager.gd" id="8_tir0j"]
+[ext_resource type="Script" path="res://scripts/quitpopup.gd" id="9_t73kg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7penb"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
 bg_color = Color(0.235294, 0.6, 0.964706, 1)
 
 [node name="Main" type="PanelContainer" node_paths=PackedStringArray("inventory", "talk_box", "level_progress")]
@@ -25,19 +34,19 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 2
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_right = 1000.0
+offset_bottom = 700.0
 
 [node name="Panel" type="Panel" parent="Panel/VBoxContainer"]
-custom_minimum_size = Vector2(0, 25)
+custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7penb")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer/Panel"]
 layout_mode = 2
-offset_top = 4.0
-offset_right = 1152.0
-offset_bottom = 27.0
+offset_right = 1000.0
+offset_bottom = 35.0
+theme_override_constants/separation = 1
 
 [node name="Title" type="Label" parent="Panel/VBoxContainer/Panel/HBoxContainer2"]
 layout_mode = 2
@@ -46,38 +55,35 @@ size_flags_vertical = 0
 text = "Dead Slumlord Desktop Adventures"
 vertical_alignment = 1
 
-[node name="Exit" type="Label" parent="Panel/VBoxContainer/Panel/HBoxContainer2"]
+[node name="close_app_button" type="Button" parent="Panel/VBoxContainer/Panel/HBoxContainer2"]
+custom_minimum_size = Vector2(23, 23)
 layout_mode = 2
 size_flags_horizontal = 10
-size_flags_vertical = 1
-text = "❌"
-horizontal_alignment = 1
+size_flags_vertical = 4
+text = "x"
+icon_alignment = 1
 
 [node name="MenuBar" type="MenuBar" parent="Panel/VBoxContainer"]
 layout_mode = 2
+script = ExtResource("3_m8ib3")
 
 [node name="File" type="PopupMenu" parent="Panel/VBoxContainer/MenuBar"]
 title = "File"
-item_count = 6
-item_0/text = "New World"
-item_1/text = "Replay Story"
+item_count = 4
+item_0/text = "Restart Game"
+item_1/text = "Restart Level"
 item_1/id = 1
-item_2/text = "Load World"
-item_2/id = 2
-item_3/text = "Save World"
-item_3/id = 3
-item_4/id = 4
-item_4/separator = true
-item_5/text = "Quit"
-item_5/id = 5
+item_2/id = 4
+item_2/separator = true
+item_3/text = "Quit"
+item_3/id = 5
 
 [node name="Options" type="PopupMenu" parent="Panel/VBoxContainer/MenuBar"]
 title = "Options"
-
-[node name="Window" type="PopupMenu" parent="Panel/VBoxContainer/MenuBar"]
-title = "Window"
 item_count = 1
-item_0/text = "Hide Me!"
+item_0/text = "Sound?"
+item_0/checkable = 1
+item_0/checked = true
 
 [node name="Help" type="PopupMenu" parent="Panel/VBoxContainer/MenuBar"]
 title = "Help"
@@ -100,7 +106,7 @@ size_flags_horizontal = 3
 unique_name_in_owner = true
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
-size = Vector2i(840, 590)
+size = Vector2i(720, 635)
 render_target_update_mode = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/MainWindow"]
@@ -113,8 +119,12 @@ size_flags_vertical = 3
 fixed_icon_size = Vector2i(50, 50)
 
 [node name="LevelProgress" type="ProgressBar" parent="Panel/VBoxContainer/MainWindow/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+step = 1.0
 rounded = true
+allow_greater = true
+show_percentage = false
 
 [node name="dialogue" type="Label" parent="Panel/VBoxContainer/MainWindow/VBoxContainer"]
 custom_minimum_size = Vector2(0, 200)
@@ -125,4 +135,80 @@ autowrap_mode = 3
 max_lines_visible = 4
 script = ExtResource("4_bntd7")
 
+[node name="AudioBus" type="Node" parent="." node_paths=PackedStringArray("volume_option")]
+script = ExtResource("5_43mt4")
+volume_option = NodePath("../Panel/VBoxContainer/MenuBar/Options")
+
+[node name="step_sound" type="AudioStreamPlayer2D" parent="AudioBus"]
+stream = ExtResource("5_vwpee")
+
+[node name="PopUpManager" type="Node" parent="." node_paths=PackedStringArray("quitPopUp")]
+script = ExtResource("8_tir0j")
+quitPopUp = NodePath("QuitPopUp")
+
+[node name="QuitPopUp" type="Window" parent="PopUpManager"]
+title = "Quit?"
+initial_position = 2
+size = Vector2i(300, 200)
+visible = false
+unresizable = true
+always_on_top = true
+popup_window = true
+theme = ExtResource("1_r64qc")
+script = ExtResource("9_t73kg")
+
+[node name="PanelContainer" type="PanelContainer" parent="PopUpManager/QuitPopUp"]
+custom_minimum_size = Vector2(300, 200)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_r64qc")
+
+[node name="Panel" type="Panel" parent="PopUpManager/QuitPopUp/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopUpManager/QuitPopUp/PanelContainer/Panel"]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 200.0
+alignment = 1
+
+[node name="Label" type="Label" parent="PopUpManager/QuitPopUp/PanelContainer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Would you like to quit?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PopUpManager/QuitPopUp/PanelContainer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PopUpConfirm" type="Button" parent="PopUpManager/QuitPopUp/PanelContainer/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Okay"
+
+[node name="PopUpDenied" type="Button" parent="PopUpManager/QuitPopUp/PanelContainer/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "No"
+
+[connection signal="pressed" from="Panel/VBoxContainer/Panel/HBoxContainer2/close_app_button" to="." method="_on_close_app_button_pressed"]
+[connection signal="id_pressed" from="Panel/VBoxContainer/MenuBar/File" to="Panel/VBoxContainer/MenuBar" method="_on_file_id_pressed"]
+[connection signal="id_pressed" from="Panel/VBoxContainer/MenuBar/Options" to="Panel/VBoxContainer/MenuBar" method="_on_options_id_pressed"]
+[connection signal="id_pressed" from="Panel/VBoxContainer/MenuBar/Help" to="Panel/VBoxContainer/MenuBar" method="_on_help_id_pressed"]
 [connection signal="item_clicked" from="Panel/VBoxContainer/MainWindow/VBoxContainer/InventoryList" to="." method="_on_inventory_list_item_clicked"]
+[connection signal="pressed" from="PopUpManager/QuitPopUp/PanelContainer/Panel/VBoxContainer/HBoxContainer/PopUpConfirm" to="PopUpManager/QuitPopUp" method="_on_pop_up_confirm_pressed"]
+[connection signal="pressed" from="PopUpManager/QuitPopUp/PanelContainer/Panel/VBoxContainer/HBoxContainer/PopUpDenied" to="PopUpManager/QuitPopUp" method="_on_pop_up_denied_pressed"]

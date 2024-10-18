@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://cs46r7rq1bap"]
+
+[ext_resource type="Script" path="res://scripts/dialogue.gd" id="1_cj2p0"]
+
+[resource]
+script = ExtResource("1_cj2p0")
+dialogue_text = Array[String](["Is that a dirt floor?", "Wait? is this just a tarp over an alley?", "You have your work cut out for you!"])

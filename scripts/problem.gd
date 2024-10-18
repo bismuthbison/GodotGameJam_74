@@ -10,7 +10,11 @@ var state = UNSOLVED
 @export var description : Dialogue
 
 func _ready():
+	self.call_deferred("_post_ready")
+	
+func _post_ready(): #so after all has loaded we want the game engine to know all the problems that are there
 	SignalBus.ping_a_problem.emit()
+	
 
 func attemptSolution(item : GameItem):
 	if item == null:
@@ -23,9 +27,7 @@ func attemptSolution(item : GameItem):
 		PROBLEM_NAME.PIPE: 
 			SignalBus.update_talkbox.emit("This is a pipe")
 			if solution.name == item.name: 
-				SignalBus.update_talkbox.emit("Fixed!")
-				$Sprite2D.frame = 0
-				state = SOLVED
+				problemGotSolved()
 		PROBLEM_NAME.RAT: #If the problem is a rat
 			return
 		PROBLEM_NAME.SPIDER: #if the problem is a spider
@@ -35,3 +37,8 @@ func attemptSolution(item : GameItem):
 		_: 
 			SignalBus.update_talkbox.emit("I am not holding what I need")
 	return
+func problemGotSolved():
+	state = SOLVED
+	$Sprite2D.frame = 0
+	SignalBus.update_talkbox.emit("Fixed!")
+	SignalBus.problem_solved.emit()
