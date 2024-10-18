@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GameItem" load_steps=4 format=3 uid="uid://qqtcrg7fhfg1"]
+
+[ext_resource type="Script" path="res://scripts/game_items.gd" id="1_84yie"]
+[ext_resource type="Texture2D" uid="uid://drk6p1risi5y5" path="res://assets/items/screwdriver.svg" id="1_y1ptf"]
+[ext_resource type="Resource" uid="uid://byvk101rqklwa" path="res://cRes/dialogue/screwdriver_dialogue.tres" id="1_ymdvx"]
+
+[resource]
+script = ExtResource("1_84yie")
+name = "Screwdriver"
+image = ExtResource("1_y1ptf")
+description = ExtResource("1_ymdvx")

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://byvk101rqklwa"]
+
+[ext_resource type="Script" path="res://scripts/dialogue.gd" id="1_kyjko"]
+
+[resource]
+script = ExtResource("1_kyjko")
+dialogue_text = Array[String](["It is a screwdriver!", "I fixed it with the screwdriver! "])

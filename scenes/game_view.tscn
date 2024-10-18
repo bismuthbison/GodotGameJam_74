@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://bvn08v2htxsy4"]
+[gd_scene load_steps=30 format=4 uid="uid://bvn08v2htxsy4"]
 
 [ext_resource type="Script" path="res://scripts/game_view.gd" id="1_8466r"]
 [ext_resource type="TileSet" uid="uid://cybu3asf3j0u1" path="res://assets/Urband Tile Sets.tres" id="1_eun2r"]
@@ -20,6 +20,18 @@
 [ext_resource type="Resource" uid="uid://btrjhg53u5b12" path="res://cRes/dialogue/roach_dialogue.tres" id="18_830rt"]
 [ext_resource type="Texture2D" uid="uid://b6mqx30wbbijx" path="res://assets/placables/roach.png" id="19_dq56s"]
 [ext_resource type="AudioStream" uid="uid://btcw8240ipywo" path="res://assets/noises/spray.mp3" id="20_kvvdi"]
+[ext_resource type="Resource" uid="uid://bb5b2ibksxh38" path="res://cRes/items/extinguisher.tres" id="21_ece6b"]
+[ext_resource type="Resource" uid="uid://qqtcrg7fhfg1" path="res://cRes/items/screwdriver.tres" id="22_guvor"]
+[ext_resource type="Resource" uid="uid://cw3uamy1dsgf5" path="res://cRes/dialogue/fire_dialogue.tres" id="23_fhu1u"]
+[ext_resource type="Texture2D" uid="uid://crkxi76vreu2g" path="res://assets/placables/fire..png" id="24_p72oo"]
+[ext_resource type="AudioStream" uid="uid://cnkh4wasmk6a" path="res://assets/noises/flamespit.mp3" id="25_32q85"]
+[ext_resource type="Script" path="res://scripts/dialogue.gd" id="26_de1ec"]
+[ext_resource type="Texture2D" uid="uid://bsw4juqtbo7qc" path="res://assets/placables/outletspritesheet.png" id="27_i2mkg"]
+[ext_resource type="AudioStream" uid="uid://cspys7d3ja8ab" path="res://assets/noises/zap.mp3" id="27_kmdp2"]
+
+[sub_resource type="Resource" id="Resource_8d6v2"]
+script = ExtResource("26_de1ec")
+dialogue_text = Array[String](["The outlet is on the fritz!", "I need to tighten the wires. "])
 
 [node name="Level_01" type="Node2D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_8466r")
@@ -78,7 +90,7 @@ who_am_i = "Entity"
 [node name="ExitPortal" parent="." instance=ExtResource("11_kptwk")]
 position = Vector2(88, 88)
 
-[node name="Problem4" parent="." instance=ExtResource("11_pvymq")]
+[node name="RatProblem" parent="." instance=ExtResource("11_pvymq")]
 position = Vector2(72, 8)
 solution = ExtResource("8_m8a44")
 description = ExtResource("12_bvs0p")
@@ -91,3 +103,25 @@ solution = ExtResource("7_c3ael")
 description = ExtResource("18_830rt")
 image = ExtResource("19_dq56s")
 audio = ExtResource("20_kvvdi")
+
+[node name="Chest" parent="." instance=ExtResource("7_6xfkx")]
+position = Vector2(-56, -40)
+contents = ExtResource("21_ece6b")
+
+[node name="Chest2" parent="." instance=ExtResource("7_6xfkx")]
+position = Vector2(-56, -8)
+contents = ExtResource("22_guvor")
+
+[node name="FireProblem" parent="." instance=ExtResource("11_pvymq")]
+position = Vector2(72, 40)
+solution = ExtResource("21_ece6b")
+description = ExtResource("23_fhu1u")
+image = ExtResource("24_p72oo")
+audio = ExtResource("25_32q85")
+
+[node name="Problem" parent="." instance=ExtResource("11_pvymq")]
+position = Vector2(72, 56)
+solution = ExtResource("22_guvor")
+description = SubResource("Resource_8d6v2")
+image = ExtResource("27_i2mkg")
+audio = ExtResource("27_kmdp2")

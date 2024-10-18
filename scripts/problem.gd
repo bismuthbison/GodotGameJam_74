@@ -29,7 +29,7 @@ func attemptSolution(item : GameItem):
 	if solution.name == item.name: 
 		problemGotSolved()
 	else:
-		SignalBus.update_talkbox.emit("I am not holding what I need")
+		SignalBus.update_talkbox.emit(description.get_next_line_text())
 	return
 func problemGotSolved():
 	state = SOLVED

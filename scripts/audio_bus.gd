@@ -13,4 +13,6 @@ func _play_audio(sound : AudioStream):
 	#passing the audio files via the connection bus is fine for one off noises
 	#however this might play at the same time so I just making sure it fits
 func _play_exit_audio():
+	if volume_option.is_item_checked(0) == false:
+		return
 	$exit_sound.play() 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cfcgmdwjppacj"]
 
-[ext_resource type="Texture2D" uid="uid://bk2lddqwercqw" path="res://assets/placables/pipe-Sheet.bmp" id="1_0i48l"]
 [ext_resource type="Script" path="res://scripts/problem.gd" id="1_xi1rh"]
+[ext_resource type="Texture2D" uid="uid://b5citcpt5shu" path="res://assets/placables/placeholder.bmp" id="2_mu44i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yudb3"]
 size = Vector2(14, 14)
@@ -13,7 +13,7 @@ script = ExtResource("1_xi1rh")
 metadata/type = "problem"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_0i48l")
+texture = ExtResource("2_mu44i")
 hframes = 2
 frame = 1
 
