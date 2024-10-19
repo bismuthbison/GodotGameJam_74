@@ -64,9 +64,10 @@ size_flags_vertical = 4
 text = "x"
 icon_alignment = 1
 
-[node name="MenuBar" type="MenuBar" parent="Panel/VBoxContainer"]
+[node name="MenuBar" type="MenuBar" parent="Panel/VBoxContainer" node_paths=PackedStringArray("quit_window")]
 layout_mode = 2
 script = ExtResource("3_m8ib3")
+quit_window = NodePath("../../../PopUpManager/QuitPopUp")
 
 [node name="File" type="PopupMenu" parent="Panel/VBoxContainer/MenuBar"]
 title = "File"

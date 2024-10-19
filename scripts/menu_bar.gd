@@ -1,8 +1,5 @@
 extends MenuBar
-
-
-
-
+@export var quit_window : Window
 func _on_file_id_pressed(id):
 	match id:
 		0: #Restart Game
@@ -10,7 +7,7 @@ func _on_file_id_pressed(id):
 		1: #Restart Level
 			SignalBus.reset_level.emit()
 		5: #Quit
-			SignalBus.try_to_quit_game.emit()
+			quit_window.show()
 		_: #not sure if this is possible, but here just in case
 			return
 	return

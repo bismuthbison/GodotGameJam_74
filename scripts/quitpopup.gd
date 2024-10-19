@@ -3,7 +3,8 @@ extends Window
 
 
 func _on_pop_up_confirm_pressed():
-	get_tree().quit()
+	SignalBus.try_to_quit_game.emit()
+	self.hide()
 
 
 func _on_pop_up_denied_pressed():

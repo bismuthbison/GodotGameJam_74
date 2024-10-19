@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnrw5fyishc41"]
+
+[ext_resource type="FontFile" uid="uid://cowor0vxea0j8" path="res://theme/fonts/monogram-extended.ttf" id="1_qbiqa"]
+
+[node name="ExitScreen" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -248.0
+offset_top = -232.0
+offset_right = 252.0
+offset_bottom = 268.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 208.0
+offset_right = 434.0
+offset_bottom = 295.0
+theme_override_fonts/font = ExtResource("1_qbiqa")
+theme_override_font_sizes/font_size = 50
+text = "Application Closed
+Please Reload"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]

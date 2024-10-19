@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var tile_map : TileMapLayer
+@export var tile_map : TileMapLayer #this is to connect to the tile map layer that the player node interacts with 
 @export var ray_cast : RayCast2D
 @export var step_sound : AudioStream
 
@@ -9,7 +9,12 @@ var equiped_item : GameItem
 
 func _ready() -> void:
 	SignalBus.item_is_selected.connect(_hold_item)
-#endfunc
+	
+#endfunc,
+# you might see some #endfuncs around. The main reason for this is that I was use 
+# to working with language that have {} or terminal words (ie C++ and visual basic)
+#However I stopped using '#endfunc' eventually, especially when I started coding with 
+#visual studio
 	
 func _hold_item(item: GameItem):
 	equiped_item = item
@@ -18,7 +23,6 @@ func _hold_item(item: GameItem):
 
 func _process(_delta: float) -> void:
 	handleInput()
-	
 func handleInput() -> void: 
 	if Input.is_action_just_pressed("up"):
 		move(Vector2i.UP)
@@ -28,7 +32,8 @@ func handleInput() -> void:
 		move(Vector2i.LEFT)
 	elif Input.is_action_just_pressed("right"):
 		move(Vector2i.RIGHT)
-
+# I owe a huge thanks to Retrobright on Youtube for his video on how to do this
+# Link: https://www.youtube.com/watch?v=9u1Dq6h7sGU
 func move(direction: Vector2i):
 	# Get current tile vector2i
 	var current_tile : Vector2i = tile_map.local_to_map(global_position)
