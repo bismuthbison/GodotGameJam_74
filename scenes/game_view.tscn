@@ -62,7 +62,7 @@ position = Vector2(24, 72)
 [node name="PushableBlock2" parent="." instance=ExtResource("8_y1b5c")]
 position = Vector2(-24, 72)
 
-[node name="pipe" parent="." instance=ExtResource("11_pvymq")]
+[node name="PipeProblem" parent="." instance=ExtResource("11_pvymq")]
 position = Vector2(72, -40)
 solution = ExtResource("9_tg4hf")
 description = ExtResource("9_btpb7")
@@ -104,11 +104,11 @@ description = ExtResource("18_830rt")
 image = ExtResource("19_dq56s")
 audio = ExtResource("20_kvvdi")
 
-[node name="Chest" parent="." instance=ExtResource("7_6xfkx")]
+[node name="ChestWithExtinguisher" parent="." instance=ExtResource("7_6xfkx")]
 position = Vector2(-56, -40)
 contents = ExtResource("21_ece6b")
 
-[node name="Chest2" parent="." instance=ExtResource("7_6xfkx")]
+[node name="ChestWithScrewdriver" parent="." instance=ExtResource("7_6xfkx")]
 position = Vector2(-56, -8)
 contents = ExtResource("22_guvor")
 
@@ -119,7 +119,7 @@ description = ExtResource("23_fhu1u")
 image = ExtResource("24_p72oo")
 audio = ExtResource("25_32q85")
 
-[node name="Problem" parent="." instance=ExtResource("11_pvymq")]
+[node name="OutletProblem" parent="." instance=ExtResource("11_pvymq")]
 position = Vector2(72, 56)
 solution = ExtResource("22_guvor")
 description = SubResource("Resource_8d6v2")

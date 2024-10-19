@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://diu4buf6jhgia"]
+
+[ext_resource type="FontFile" uid="uid://cowor0vxea0j8" path="res://theme/fonts/monogram-extended.ttf" id="1_fbnfr"]
+
+[resource]
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/fonts/font = ExtResource("1_fbnfr")

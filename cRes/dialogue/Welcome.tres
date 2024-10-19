@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_m5ljd")
-dialogue_text = Array[String](["You have died!", "Your were a slum lord.", "Who has profitted off the down trodden"])
+dialogue_text = Array[String](["You have died!", "Your were a slum lord.", "Who has profitted off the down trodden", "You must fix your former tenate's flats.", "Or else you won't pass on.", "Good luck! "])

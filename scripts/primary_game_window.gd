@@ -8,8 +8,9 @@ var inventoryItems : Dictionary = {}
 var problemCount : int = 0
 var solvedProblems : int = 0
 const levels = [
-	preload("res://scenes/game_view.tscn"),
+	preload("res://scenes/levels/level_01.tscn"),
 	preload("res://scenes/levels/level_02.tscn"),
+	preload("res://scenes/levels/level_03.tscn"),
 ]
 const end_scene = preload("res://scenes/quit_screen.tscn")
 var current_level = 0

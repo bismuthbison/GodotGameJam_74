@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://jjkhpfk524ml"]
+[gd_scene load_steps=24 format=4 uid="uid://jjkhpfk524ml"]
 
 [ext_resource type="TileSet" uid="uid://cybu3asf3j0u1" path="res://assets/Urband Tile Sets.tres" id="1_o6yts"]
 [ext_resource type="PackedScene" uid="uid://bmsoswgpfxc3f" path="res://scenes/npc.tscn" id="2_7l4k6"]
@@ -17,7 +17,15 @@
 [ext_resource type="Texture2D" uid="uid://bk2lddqwercqw" path="res://assets/placables/pipe-Sheet.bmp" id="11_m84we"]
 [ext_resource type="AudioStream" uid="uid://btcw8240ipywo" path="res://assets/noises/spray.mp3" id="12_r3y8o"]
 [ext_resource type="AudioStream" uid="uid://ql6cdb35dagw" path="res://assets/noises/tighten.mp3" id="12_v0rce"]
+[ext_resource type="Resource" uid="uid://qqtcrg7fhfg1" path="res://cRes/items/screwdriver.tres" id="13_5xsng"]
 [ext_resource type="PackedScene" uid="uid://bufywrkgr8712" path="res://scenes/exit_portal.tscn" id="14_3q6ik"]
+[ext_resource type="Script" path="res://scripts/dialogue.gd" id="14_ba8ai"]
+[ext_resource type="Texture2D" uid="uid://bsw4juqtbo7qc" path="res://assets/placables/outletspritesheet.png" id="15_hx8fd"]
+[ext_resource type="AudioStream" uid="uid://cspys7d3ja8ab" path="res://assets/noises/zap.mp3" id="16_j865d"]
+
+[sub_resource type="Resource" id="Resource_bml6p"]
+script = ExtResource("14_ba8ai")
+dialogue_text = Array[String](["The outlet is on the fritz!", "I need to tighten the wires. "])
 
 [node name="Level_02" type="Node2D"]
 
@@ -29,7 +37,7 @@ tile_set = ExtResource("1_o6yts")
 metadata/_edit_lock_ = true
 
 [node name="Furniture" type="TileMapLayer" parent="TheWorld"]
-tile_map_data = PackedByteArray("AAAAAPr/AAAIAAEAAAD///r/AAALAAEAAAD8//b/AQALAA0AAAD9//b/AQAEAA0AAAD+//b/AQAIAA0AAAD///b/AQAFAA0AAAAAAPb/AQAGAA0AAAABAPb/AQAKAA0AAAD9/wgAAQAYAAYAAAD+/wgAAQAYAAYAAAD//wgAAQAYAAYAAAAAAAgAAQAYAAYAAAAAAAkAAQAfABAAAAAAAAoAAQAfABEAAAABAAkAAQAgABAAAAABAAoAAQAgABEAAAACAAkAAQAhABAAAAACAAoAAQAhABEAAAD4/wkAAQAhABgAAAD4/woAAQAhABkAAAD5/wkAAQAfABAAAAD5/woAAQAfABEAAAD6/wkAAQAgABAAAAD6/woAAQAgABEAAADw/wkAAQAfABAAAADw/woAAQAfABEAAADx/wkAAQAgABAAAADx/woAAQAgABEAAADy/wkAAQAhABAAAADy/woAAQAhABEAAAADAAkAAQAfABQAAAADAAoAAQAfABUAAAAEAAkAAQAgABQAAAAEAAoAAQAgABUAAAAFAAkAAQAhABQAAAAFAAoAAQAhABUAAAAKAAkAAQAfABQAAAAKAAoAAQAfABUAAAALAAkAAQAgABQAAAALAAoAAQAgABUAAAAMAAkAAQAhABQAAAAMAAoAAQAhABUAAADz/wkAAQAfABQAAADz/woAAQAfABUAAAD0/wkAAQAgABQAAAD0/woAAQAgABUAAAD1/wkAAQAhABQAAAD1/woAAQAhABUAAAD2/wkAAQAfABgAAAD2/woAAQAfABkAAAD3/wkAAQAgABgAAAD3/woAAQAgABkAAAD7/wkAAQAhABAAAAD7/woAAQAhABEAAAD8/wkAAQAfABgAAAD8/woAAQAfABkAAAD9/wkAAQAgABgAAAD9/woAAQAgABkAAAD+/wkAAQAhABgAAAD+/woAAQAhABkAAAANAAkAAQAfABQAAAANAAoAAQAfABUAAAAOAAkAAQAgABQAAAAOAAoAAQAgABUAAAAPAAkAAQAhABQAAAAPAAoAAQAhABUAAAAGAAkAAQAfABgAAAAGAAoAAQAfABkAAAAHAAkAAQAgABgAAAAHAAoAAQAgABkAAAAIAAkAAQAhABgAAAAIAAoAAQAhABkAAAA=")
+tile_map_data = PackedByteArray("AAAAAPr/AAAIAAEAAAD///r/AAALAAEAAAD8//b/AQALAA0AAAD9//b/AQAEAA0AAAD+//b/AQAIAA0AAAD///b/AQAFAA0AAAAAAPb/AQAGAA0AAAABAPb/AQAKAA0AAAD9/wgAAQAYAAYAAAD+/wgAAQAYAAYAAAD//wgAAQAYAAYAAAAAAAgAAQAYAAYAAAAAAAkAAQAfABAAAAAAAAoAAQAfABEAAAABAAkAAQAgABAAAAABAAoAAQAgABEAAAACAAkAAQAhABAAAAACAAoAAQAhABEAAAD4/wkAAQAhABgAAAD4/woAAQAhABkAAAD5/wkAAQAfABAAAAD5/woAAQAfABEAAAD6/wkAAQAgABAAAAD6/woAAQAgABEAAADw/wkAAQAfABAAAADw/woAAQAfABEAAADx/wkAAQAgABAAAADx/woAAQAgABEAAADy/wkAAQAhABAAAADy/woAAQAhABEAAAADAAkAAQAfABQAAAADAAoAAQAfABUAAAAEAAkAAQAgABQAAAAEAAoAAQAgABUAAAAFAAkAAQAhABQAAAAFAAoAAQAhABUAAAAKAAkAAQAfABQAAAAKAAoAAQAfABUAAAALAAkAAQAgABQAAAALAAoAAQAgABUAAAAMAAkAAQAhABQAAAAMAAoAAQAhABUAAADz/wkAAQAfABQAAADz/woAAQAfABUAAAD0/wkAAQAgABQAAAD0/woAAQAgABUAAAD1/wkAAQAhABQAAAD1/woAAQAhABUAAAD2/wkAAQAfABgAAAD2/woAAQAfABkAAAD3/wkAAQAgABgAAAD3/woAAQAgABkAAAD7/wkAAQAhABAAAAD7/woAAQAhABEAAAD8/wkAAQAfABgAAAD8/woAAQAfABkAAAD9/wkAAQAgABgAAAD9/woAAQAgABkAAAD+/wkAAQAhABgAAAD+/woAAQAhABkAAAANAAkAAQAfABQAAAANAAoAAQAfABUAAAAOAAkAAQAgABQAAAAOAAoAAQAgABUAAAAPAAkAAQAhABQAAAAPAAoAAQAhABUAAAAGAAkAAQAfABgAAAAGAAoAAQAfABkAAAAHAAkAAQAgABgAAAAHAAoAAQAgABkAAAAIAAkAAQAhABgAAAAIAAoAAQAhABkAAAAAAOz/AAAXAAgAAAABAOz/AAAYAAgAAAD9//P/AAAHAAAAAAD9//L/AAAAAAIAAAD9//T/AAABAAIAAAAAAPL/AAAOABAAAAAAAPP/AAAOABEAAAD9//j/AAAVAAMAAAAAAPj/AAAWAAMAAAAAAPz/AAAWAAQAAAAAAPv/AAARAAMAAAA=")
 tile_set = ExtResource("1_o6yts")
 metadata/_edit_lock_ = true
 
@@ -40,7 +48,7 @@ tile_map = NodePath("../TheWorld/BaseLayer")
 [node name="Crates" type="Node" parent="."]
 
 [node name="PushableBlock" parent="Crates" instance=ExtResource("5_pfbcq")]
-position = Vector2(360, -328)
+position = Vector2(360, -312)
 
 [node name="PushableBlock11" parent="Crates" instance=ExtResource("5_pfbcq")]
 position = Vector2(296, -360)
@@ -52,7 +60,7 @@ position = Vector2(264, -376)
 position = Vector2(280, -376)
 
 [node name="PushableBlock2" parent="Crates" instance=ExtResource("5_pfbcq")]
-position = Vector2(360, -296)
+position = Vector2(360, -280)
 
 [node name="PushableBlock3" parent="Crates" instance=ExtResource("5_pfbcq")]
 position = Vector2(296, -328)
@@ -93,6 +101,21 @@ position = Vector2(360, -472)
 [node name="PushableBlock10" parent="Crates" instance=ExtResource("5_pfbcq")]
 position = Vector2(360, -488)
 
+[node name="PushableBlock20" parent="Crates" instance=ExtResource("5_pfbcq")]
+position = Vector2(376, -200)
+
+[node name="PushableBlock21" parent="Crates" instance=ExtResource("5_pfbcq")]
+position = Vector2(312, -376)
+
+[node name="PushableBlock19" parent="Crates" instance=ExtResource("5_pfbcq")]
+position = Vector2(360, -200)
+
+[node name="PushableBlock22" parent="Crates" instance=ExtResource("5_pfbcq")]
+position = Vector2(360, -216)
+
+[node name="PushableBlock23" parent="Crates" instance=ExtResource("5_pfbcq")]
+position = Vector2(392, -184)
+
 [node name="Problems" type="Node" parent="."]
 
 [node name="Roach" parent="Problems" instance=ExtResource("8_6ryct")]
@@ -102,12 +125,26 @@ description = ExtResource("10_dsx0v")
 image = ExtResource("11_ett3x")
 audio = ExtResource("12_r3y8o")
 
-[node name="pipe1" parent="Problems" instance=ExtResource("8_6ryct")]
+[node name="PipeProblem" parent="Problems" instance=ExtResource("8_6ryct")]
 position = Vector2(-40, -104)
 solution = ExtResource("9_x1tae")
 description = ExtResource("10_84u4w")
 image = ExtResource("11_m84we")
 audio = ExtResource("12_v0rce")
+
+[node name="OutletProblem" parent="Problems" instance=ExtResource("8_6ryct")]
+position = Vector2(184, -248)
+solution = ExtResource("13_5xsng")
+description = SubResource("Resource_bml6p")
+image = ExtResource("15_hx8fd")
+audio = ExtResource("16_j865d")
+
+[node name="OutletProblem2" parent="Problems" instance=ExtResource("8_6ryct")]
+position = Vector2(-40, -312)
+solution = ExtResource("13_5xsng")
+description = SubResource("Resource_bml6p")
+image = ExtResource("15_hx8fd")
+audio = ExtResource("16_j865d")
 
 [node name="Chests" type="Node" parent="."]
 
@@ -118,6 +155,10 @@ contents = ExtResource("9_p2uv5")
 [node name="ChestWithSpanner" parent="Chests" instance=ExtResource("9_6tqar")]
 position = Vector2(264, -360)
 contents = ExtResource("9_x1tae")
+
+[node name="ChestWithScrewdriver" parent="Chests" instance=ExtResource("9_6tqar")]
+position = Vector2(392, -216)
+contents = ExtResource("13_5xsng")
 
 [node name="NPCs" type="Node" parent="."]
 

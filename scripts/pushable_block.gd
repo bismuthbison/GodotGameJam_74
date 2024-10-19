@@ -2,7 +2,6 @@ extends StaticBody2D
 
 @export var ray_cast : RayCast2D
 
-#TODO: Add Double PUSH
 
 func push(direction : Vector2i, tile_map : TileMapLayer) -> bool:
 	#get current tile

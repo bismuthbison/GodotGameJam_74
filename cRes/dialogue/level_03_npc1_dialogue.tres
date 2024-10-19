@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://bwe00bg18ooej"]
+
+[ext_resource type="Script" path="res://scripts/dialogue.gd" id="1_2urgk"]
+
+[resource]
+script = ExtResource("1_2urgk")
+dialogue_text = Array[String](["That naff of a landlord died!", "Better squat in this carsey.", "Don't wanna go back to the lag."])
