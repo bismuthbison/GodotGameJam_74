@@ -165,13 +165,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 792.0
 offset_top = 40.0
-offset_right = 954.0
+offset_right = 952.0
 offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_h6jbq")
-text = "Text will appear in the 
-lower right."
+text = "Keep walking into them to 
+see more dialogue appear."
 label_settings = SubResource("LabelSettings_pknt2")
 
 [node name="Label7" type="Label" parent="."]

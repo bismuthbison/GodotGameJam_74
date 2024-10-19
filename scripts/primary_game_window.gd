@@ -11,6 +11,7 @@ const levels = [
 	preload("res://scenes/levels/level_01.tscn"),
 	preload("res://scenes/levels/level_02.tscn"),
 	preload("res://scenes/levels/level_03.tscn"),
+	preload("res://scenes/levels/level_04.tscn"),
 ]
 const end_scene = preload("res://scenes/quit_screen.tscn")
 var current_level = 0

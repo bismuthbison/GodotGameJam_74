@@ -143,6 +143,7 @@ volume_option = NodePath("../Panel/VBoxContainer/MenuBar/Options")
 
 [node name="sound_to_play" type="AudioStreamPlayer2D" parent="AudioBus"]
 stream = ExtResource("5_vwpee")
+volume_db = -12.536
 
 [node name="exit_sound" type="AudioStreamPlayer2D" parent="AudioBus"]
 stream = ExtResource("8_chwxv")

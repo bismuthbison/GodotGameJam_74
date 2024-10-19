@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5wcopv6tc3ab"
-path="res://.godot/imported/tile_0114.png-e6e5ef53a39f9a3c21bcbb11175f710a.ctex"
+uid="uid://ptr6rb227tk6"
+path="res://.godot/imported/noBG-Wildling-Wallpaper 1440.png-3fadf9e7fccab4c63f6b5bed01f42aa0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placables/tile_0114.png"
-dest_files=["res://.godot/imported/tile_0114.png-e6e5ef53a39f9a3c21bcbb11175f710a.ctex"]
+source_file="res://assets/icon/noBG-Wildling-Wallpaper 1440.png"
+dest_files=["res://.godot/imported/noBG-Wildling-Wallpaper 1440.png-3fadf9e7fccab4c63f6b5bed01f42aa0.ctex"]
 
 [params]
 
