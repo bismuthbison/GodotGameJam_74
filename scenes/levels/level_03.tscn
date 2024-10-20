@@ -24,7 +24,7 @@
 
 [sub_resource type="Resource" id="Resource_ijoty"]
 script = ExtResource("18_ikbjk")
-dialogue_text = Array[String](["What is going? ", "Everynight I hear scratching in the walls", ""])
+dialogue_text = Array[String](["What is going? ", "Everynight I hear scratching in the walls"])
 
 [sub_resource type="Resource" id="Resource_0tp07"]
 script = ExtResource("18_ikbjk")
@@ -205,6 +205,7 @@ who_am_i = "Tenant"
 [node name="NPC2" parent="NPC" instance=ExtResource("17_bm6yp")]
 position = Vector2(-24, 8)
 speach = SubResource("Resource_0tp07")
+who_am_i = "Entity"
 
 [node name="Player" parent="." node_paths=PackedStringArray("tile_map") instance=ExtResource("20_wjed2")]
 position = Vector2(-24, 40)

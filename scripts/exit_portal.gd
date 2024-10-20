@@ -20,7 +20,6 @@ func _makeActive():
 func exitLevel() -> bool:
 	if active == true: 
 		SignalBus.load_next_scene.emit()
-		prints("attempting to load next scene")
 		return true
 	else: 
 		return false

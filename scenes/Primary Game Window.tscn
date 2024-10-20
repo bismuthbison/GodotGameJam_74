@@ -124,7 +124,7 @@ show_percentage = false
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 theme = ExtResource("3_0xijs")
-text = "Keep me here  to test"
+text = "Welcome"
 autowrap_mode = 3
 max_lines_visible = 4
 script = ExtResource("4_bntd7")
@@ -143,7 +143,6 @@ volume_db = -12.0
 
 [node name="enviro_fx" type="AudioStreamPlayer2D" parent="AudioBus"]
 stream = ExtResource("9_wc5xy")
-volume_db = -8.0
 
 [node name="PopUpManager" type="Node" parent="." node_paths=PackedStringArray("quitPopUp")]
 script = ExtResource("8_tir0j")

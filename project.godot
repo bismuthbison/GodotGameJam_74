@@ -14,7 +14,7 @@ config/name="GodotGameJam_74"
 run/main_scene="res://scenes/Primary Game Window.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/bg_color=Color(0.0784314, 0.133333, 0.25098, 1)
-boot_splash/image="res://assets/icon/noBG-Wildling-Wallpaper 1440.png"
+boot_splash/image="res://assets/icon/GWJ-Wallpaper 1080.png"
 config/icon="res://assets/icon/spooky-house.svg"
 
 [autoload]

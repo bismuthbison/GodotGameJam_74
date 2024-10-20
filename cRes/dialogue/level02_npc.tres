@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_paj8f")
-dialogue_text = Array[String](["I heard the landlord died?", "What is going to happen to my home?"])
+dialogue_text = Array[String](["I heard the landlord died?", "Well not like they did anything anyways.", "Seems like he died alone."])

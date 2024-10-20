@@ -62,46 +62,46 @@ metadata/_edit_lock_ = true
 [node name="Blocks" type="Node" parent="."]
 
 [node name="PushableBlock" parent="Blocks" instance=ExtResource("2_ro1r8")]
-position = Vector2(-184, -328)
+position = Vector2(-168, -328)
 
 [node name="PushableBlock2" parent="Blocks" instance=ExtResource("2_ro1r8")]
-position = Vector2(-184, -296)
+position = Vector2(-184, -280)
 
 [node name="PushableBlock3" parent="Blocks" instance=ExtResource("2_ro1r8")]
 position = Vector2(-168, -312)
 
 [node name="PushableBlock4" parent="Blocks" instance=ExtResource("2_ro1r8")]
-position = Vector2(-200, -296)
+position = Vector2(-168, -296)
 
 [node name="PushableBlock5" parent="Blocks" instance=ExtResource("2_ro1r8")]
-position = Vector2(-200, -328)
+position = Vector2(-184, -328)
 
 [node name="PushableBlock6" parent="Blocks" instance=ExtResource("2_ro1r8")]
-position = Vector2(-216, -344)
+position = Vector2(-200, -328)
 
 [node name="PushableBlock7" parent="Blocks" instance=ExtResource("2_ro1r8")]
-position = Vector2(-200, -344)
-
-[node name="PushableBlock8" parent="Blocks" instance=ExtResource("2_ro1r8")]
 position = Vector2(-184, -344)
 
+[node name="PushableBlock8" parent="Blocks" instance=ExtResource("2_ro1r8")]
+position = Vector2(-168, -344)
+
 [node name="PushableBlock9" parent="Blocks" instance=ExtResource("2_ro1r8")]
-position = Vector2(-232, -280)
-
-[node name="PushableBlock10" parent="Blocks" instance=ExtResource("2_ro1r8")]
-position = Vector2(-216, -280)
-
-[node name="PushableBlock11" parent="Blocks" instance=ExtResource("2_ro1r8")]
-position = Vector2(-200, -280)
-
-[node name="PushableBlock12" parent="Blocks" instance=ExtResource("2_ro1r8")]
-position = Vector2(-232, -344)
-
-[node name="PushableBlock13" parent="Blocks" instance=ExtResource("2_ro1r8")]
 position = Vector2(-216, -296)
 
-[node name="PushableBlock14" parent="Blocks" instance=ExtResource("2_ro1r8")]
+[node name="PushableBlock10" parent="Blocks" instance=ExtResource("2_ro1r8")]
+position = Vector2(-216, -328)
+
+[node name="PushableBlock11" parent="Blocks" instance=ExtResource("2_ro1r8")]
 position = Vector2(-232, -296)
+
+[node name="PushableBlock12" parent="Blocks" instance=ExtResource("2_ro1r8")]
+position = Vector2(-232, -328)
+
+[node name="PushableBlock13" parent="Blocks" instance=ExtResource("2_ro1r8")]
+position = Vector2(-184, -296)
+
+[node name="PushableBlock14" parent="Blocks" instance=ExtResource("2_ro1r8")]
+position = Vector2(-200, -296)
 
 [node name="PushableBlock15" parent="Blocks" instance=ExtResource("2_ro1r8")]
 position = Vector2(8, -344)
