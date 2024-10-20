@@ -1,2 +1,2 @@
-This is my submission to the godot wild jam # 74
-This is my first project submitted in a long time, I haven't developed software in over 15 years. 
+# About This Project
+This is a project submission for [Godot Wild Jam #74](https://itch.io/jam/godot-wild-jam-74) it was inspired by the old desktop adventure games. My background before this has been working various industrial jobs and service jobs. I worked for the video game industry back in the 2000s and 2010s. However I have lots of experience 

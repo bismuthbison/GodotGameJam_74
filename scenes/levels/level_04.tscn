@@ -34,7 +34,7 @@ dialogue_text = Array[String](["I wish the landlord would", "have delt with the 
 
 [sub_resource type="Resource" id="Resource_x1ccn"]
 script = ExtResource("18_6634m")
-dialogue_text = Array[String](["Litteral fire?", "Oh boy... good luck. "])
+dialogue_text = Array[String](["A Literal fire?", "Oh boy... good luck. "])
 
 [sub_resource type="Resource" id="Resource_4qrn5"]
 script = ExtResource("18_6634m")
@@ -210,4 +210,5 @@ who_am_i = "Julian"
 tile_map = NodePath("../Tiles/BaseLayer")
 
 [node name="ExitPortal" parent="." instance=ExtResource("23_4n1hl")]
+visible = false
 position = Vector2(56, -104)

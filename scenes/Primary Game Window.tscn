@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bp4belogjknwf"]
+[gd_scene load_steps=13 format=3 uid="uid://bp4belogjknwf"]
 
 [ext_resource type="Theme" uid="uid://b3qna3b85eetg" path="res://theme/main.tres" id="1_r64qc"]
 [ext_resource type="Script" path="res://scripts/primary_game_window.gd" id="2_ot7pi"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://cipkt6rkh8mte" path="res://assets/noises/exitportalopens.mp3" id="8_chwxv"]
 [ext_resource type="Script" path="res://scripts/pop_up_manager.gd" id="8_tir0j"]
 [ext_resource type="Script" path="res://scripts/quitpopup.gd" id="9_t73kg"]
+[ext_resource type="AudioStream" uid="uid://bjxo0d6ic7eqm" path="res://assets/noises/wind.mp3" id="9_wc5xy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7penb"]
 content_margin_left = 0.0
@@ -87,15 +88,6 @@ item_0/text = "Sound?"
 item_0/checkable = 1
 item_0/checked = true
 
-[node name="Help" type="PopupMenu" parent="Panel/VBoxContainer/MenuBar"]
-title = "Help"
-item_count = 3
-item_0/text = "How to Play "
-item_1/id = 1
-item_1/separator = true
-item_2/text = "About / Credits"
-item_2/id = 2
-
 [node name="MainWindow" type="HBoxContainer" parent="Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -143,10 +135,15 @@ volume_option = NodePath("../Panel/VBoxContainer/MenuBar/Options")
 
 [node name="sound_to_play" type="AudioStreamPlayer2D" parent="AudioBus"]
 stream = ExtResource("5_vwpee")
-volume_db = -12.536
+volume_db = -12.0
 
 [node name="exit_sound" type="AudioStreamPlayer2D" parent="AudioBus"]
 stream = ExtResource("8_chwxv")
+volume_db = -12.0
+
+[node name="enviro_fx" type="AudioStreamPlayer2D" parent="AudioBus"]
+stream = ExtResource("9_wc5xy")
+volume_db = -8.0
 
 [node name="PopUpManager" type="Node" parent="." node_paths=PackedStringArray("quitPopUp")]
 script = ExtResource("8_tir0j")
@@ -214,7 +211,6 @@ text = "No"
 [connection signal="pressed" from="Panel/VBoxContainer/Panel/HBoxContainer2/close_app_button" to="." method="_on_close_app_button_pressed"]
 [connection signal="id_pressed" from="Panel/VBoxContainer/MenuBar/File" to="Panel/VBoxContainer/MenuBar" method="_on_file_id_pressed"]
 [connection signal="id_pressed" from="Panel/VBoxContainer/MenuBar/Options" to="Panel/VBoxContainer/MenuBar" method="_on_options_id_pressed"]
-[connection signal="id_pressed" from="Panel/VBoxContainer/MenuBar/Help" to="Panel/VBoxContainer/MenuBar" method="_on_help_id_pressed"]
 [connection signal="item_clicked" from="Panel/VBoxContainer/MainWindow/VBoxContainer/InventoryList" to="." method="_on_inventory_list_item_clicked"]
 [connection signal="pressed" from="PopUpManager/QuitPopUp/PanelContainer/Panel/VBoxContainer/HBoxContainer/PopUpConfirm" to="PopUpManager/QuitPopUp" method="_on_pop_up_confirm_pressed"]
 [connection signal="pressed" from="PopUpManager/QuitPopUp/PanelContainer/Panel/VBoxContainer/HBoxContainer/PopUpDenied" to="PopUpManager/QuitPopUp" method="_on_pop_up_denied_pressed"]

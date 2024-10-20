@@ -200,6 +200,7 @@ audio = ExtResource("16_41keq")
 position = Vector2(56, 8)
 speach = SubResource("Resource_ijoty")
 look = ExtResource("19_ufcgl")
+who_am_i = "Tenant"
 
 [node name="NPC2" parent="NPC" instance=ExtResource("17_bm6yp")]
 position = Vector2(-24, 8)
